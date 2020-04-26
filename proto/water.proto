@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zeaho.proto.water";
+option java_outer_classname = "WaterProto";
+option objc_class_prefix = "HLW";
+
+package water;
+
+// The greeting service definition.
+service WaterCompany {
+  // Sends a greeting
+  rpc BuyStreamWater (WaterRequest) returns (stream WaterReply) {}
+  rpc BuyWater (WaterRequest) returns (WaterReply) {}
+}
+
+// The request message containing the user's name.
+message WaterRequest {
+  float price = 1;
+}
+
+// The response message containing the greetings
+message WaterReply {
+  string message = 1;
+}

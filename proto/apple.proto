@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zeaho.proto.apple";
+option java_outer_classname = "AppleProto";
+option objc_class_prefix = "HLW";
+
+package apple;
+
+// The greeting service definition.
+service Farmer {
+  // Sends a greeting
+  rpc GetApple (AppleRequest) returns (AppleReply) {}
+}
+
+// The request message containing the user's name.
+message AppleRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message AppleReply {
+  string message = 1;
+}
